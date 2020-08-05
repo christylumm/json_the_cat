@@ -4,8 +4,6 @@ const request = require("request");
 //https://api.thecatapi.com/v1/breeds/search
 
 const fetchBreedDescription = function(breedName, callback) {
-  const breedName = process.argv.slice(2);
-
   request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName}`, (error, body) => {
     if (error !== null) {
       callback(error, null);
